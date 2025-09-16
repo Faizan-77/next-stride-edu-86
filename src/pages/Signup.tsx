@@ -57,12 +57,8 @@ export default function Signup() {
         description: 'Account created successfully!',
       });
       
-      // Redirect based on role
-      if (role === 'student') {
-        navigate('/student-dashboard');
-      } else {
-        navigate('/parent-dashboard');
-      }
+      // Redirect to homepage after successful signup
+      navigate('/');
     } else {
       toast({
         title: 'Error',

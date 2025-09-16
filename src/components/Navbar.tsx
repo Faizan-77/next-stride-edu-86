@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
 import { useAuth } from '@/lib/auth';
-import { GraduationCap, Menu, X, Sun, Moon, User, LogOut } from 'lucide-react';
+import { GraduationCap, Menu, X, Sun, Moon, User, LogOut, Search } from 'lucide-react';
 import { useTheme } from '@/components/ThemeProvider';
 import {
   DropdownMenu,
@@ -13,6 +14,7 @@ import {
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState('');
   const { user, logout } = useAuth();
   const { theme, setTheme } = useTheme();
   const location = useLocation();
@@ -25,6 +27,14 @@ export default function Navbar() {
   ];
 
   const isActive = (path: string) => location.pathname === path;
+
+  const handleSearch = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (searchQuery.trim()) {
+      // Handle search functionality here
+      console.log('Searching for:', searchQuery);
+    }
+  };
 
   return (
     <nav className="bg-background/95 backdrop-blur-sm border-b border-border sticky top-0 z-50 shadow-card">
@@ -40,22 +50,37 @@ export default function Navbar() {
             </Link>
           </div>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
-            {navigation.map((item) => (
-              <Link
-                key={item.name}
-                to={item.href}
-                className={`text-sm font-medium transition-colors hover:text-primary ${
-                  isActive(item.href) 
-                    ? 'text-primary border-b-2 border-primary' 
-                    : 'text-muted-foreground'
-                }`}
-              >
-                {item.name}
-              </Link>
-            ))}
-          </div>
+          {/* Desktop Navigation or Search */}
+          {user ? (
+            <div className="hidden md:flex items-center space-x-8">
+              {navigation.map((item) => (
+                <Link
+                  key={item.name}
+                  to={item.href}
+                  className={`text-sm font-medium transition-colors hover:text-primary ${
+                    isActive(item.href) 
+                      ? 'text-primary border-b-2 border-primary' 
+                      : 'text-muted-foreground'
+                  }`}
+                >
+                  {item.name}
+                </Link>
+              ))}
+            </div>
+          ) : (
+            <div className="hidden md:flex flex-1 max-w-md mx-8">
+              <form onSubmit={handleSearch} className="relative w-full">
+                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+                <Input
+                  type="text"
+                  placeholder="Search courses, colleges, scholarships..."
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  className="pl-10 w-full"
+                />
+              </form>
+            </div>
+          )}
 
           {/* Right side controls */}
           <div className="flex items-center space-x-4">
@@ -121,7 +146,19 @@ export default function Navbar() {
         {isOpen && (
           <div className="md:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-card rounded-lg mt-2 shadow-card">
-              {navigation.map((item) => (
+              {!user && (
+                <form onSubmit={handleSearch} className="relative mb-4">
+                  <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+                  <Input
+                    type="text"
+                    placeholder="Search courses, colleges, scholarships..."
+                    value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
+                    className="pl-10 w-full"
+                  />
+                </form>
+              )}
+              {user && navigation.map((item) => (
                 <Link
                   key={item.name}
                   to={item.href}

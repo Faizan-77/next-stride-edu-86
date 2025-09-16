@@ -1,6 +1,7 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { LucideIcon } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
+import { useAuth } from '@/lib/auth';
 
 interface FeatureCardProps {
   title: string;
@@ -11,8 +12,18 @@ interface FeatureCardProps {
 }
 
 export default function FeatureCard({ title, description, icon: Icon, href, gradient = false }: FeatureCardProps) {
+  const { user } = useAuth();
+  const navigate = useNavigate();
+
+  const handleClick = (e: React.MouseEvent) => {
+    if (!user) {
+      e.preventDefault();
+      navigate('/signup');
+    }
+  };
+
   return (
-    <Link to={href} className="group">
+    <Link to={href} className="group" onClick={handleClick}>
       <Card className={`h-full transition-all duration-300 hover:scale-105 shadow-card hover:shadow-hover cursor-pointer ${
         gradient ? 'bg-gradient-card border-primary/20' : 'bg-card hover:bg-card-hover'
       }`}>

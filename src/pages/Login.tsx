@@ -37,12 +37,8 @@ export default function Login() {
         description: 'Logged in successfully!',
       });
       
-      // Redirect based on role
-      if (role === 'student') {
-        navigate('/student-dashboard');
-      } else {
-        navigate('/parent-dashboard');
-      }
+      // Redirect to homepage after successful login
+      navigate('/');
     } else {
       toast({
         title: 'Error',
