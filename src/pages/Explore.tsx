@@ -147,7 +147,7 @@ export default function Explore() {
                     Take Career Quiz
                   </Link>
                 </Button>
-                <Button asChild variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-primary">
+                <Button asChild variant="secondary" size="lg">
                   <Link to="/contact">
                     Get Guidance
                   </Link>

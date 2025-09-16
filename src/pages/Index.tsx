@@ -52,7 +52,7 @@ const Index = () => {
       href: '/courses',
     },
     {
-      title: 'AI Assistant',
+      title: 'FAQs',
       description: 'Get instant answers to your career and education questions 24/7',
       icon: MessageCircle,
       href: '/chatbot',

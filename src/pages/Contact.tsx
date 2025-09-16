@@ -54,13 +54,77 @@ export default function Contact() {
         {/* Header */}
         <div className="text-center mb-12">
           <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-            Get in Touch
+            About EduNav & Contact Us
           </h1>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Have questions about your educational journey? We're here to help you navigate 
-            your path to success with personalized guidance and support.
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            Empowering students and parents with data-driven insights and personalized guidance 
+            to make informed educational and career decisions. Get in touch for support on your educational journey.
           </p>
         </div>
+
+        {/* About Section */}
+        <section className="mb-16">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-16">
+            <div className="space-y-8">
+              <div>
+                <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
+                  Our Mission
+                </h2>
+                <p className="text-lg text-muted-foreground leading-relaxed">
+                  To bridge the gap between student potential and career opportunities by providing 
+                  accessible, personalized, and data-driven educational guidance that empowers 
+                  every student to make informed decisions about their future.
+                </p>
+              </div>
+              
+              <div>
+                <h3 className="text-2xl font-bold text-foreground mb-4">Our Vision</h3>
+                <p className="text-lg text-muted-foreground leading-relaxed">
+                  A world where every student has access to quality career guidance and can 
+                  confidently pursue their dreams, regardless of their background or circumstances.
+                </p>
+              </div>
+            </div>
+
+            <div className="space-y-6">
+              <Card className="bg-gradient-card shadow-hover">
+                <CardContent className="p-8">
+                  <div className="flex items-center space-x-4 mb-4">
+                    <div className="h-8 w-8 bg-primary/20 rounded-full flex items-center justify-center">
+                      <span className="text-primary font-bold">50K+</span>
+                    </div>
+                    <h3 className="text-xl font-semibold">Students Guided</h3>
+                  </div>
+                  <p className="text-muted-foreground">Students successfully guided to their ideal career paths</p>
+                </CardContent>
+              </Card>
+
+              <Card className="bg-gradient-card shadow-hover">
+                <CardContent className="p-8">
+                  <div className="flex items-center space-x-4 mb-4">
+                    <div className="h-8 w-8 bg-success/20 rounded-full flex items-center justify-center">
+                      <span className="text-success font-bold">500+</span>
+                    </div>
+                    <h3 className="text-xl font-semibold">Partner Colleges</h3>
+                  </div>
+                  <p className="text-muted-foreground">Partner colleges and educational institutions</p>
+                </CardContent>
+              </Card>
+
+              <Card className="bg-gradient-card shadow-hover">
+                <CardContent className="p-8">
+                  <div className="flex items-center space-x-4 mb-4">
+                    <div className="h-8 w-8 bg-warning/20 rounded-full flex items-center justify-center">
+                      <span className="text-warning font-bold">95%</span>
+                    </div>
+                    <h3 className="text-xl font-semibold">Success Rate</h3>
+                  </div>
+                  <p className="text-muted-foreground">Student satisfaction rate with our recommendations</p>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </section>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Contact Form */}

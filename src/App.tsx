@@ -10,7 +10,6 @@ import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import StudentDashboard from "./pages/StudentDashboard";
 import ParentDashboard from "./pages/ParentDashboard";
-import About from "./pages/About";
 import Quiz from "./pages/Quiz";
 import NotFound from "./pages/NotFound";
 import Colleges from "./pages/Colleges";
@@ -50,7 +49,6 @@ const App = () => (
               <Route path="/signup" element={<Signup />} />
               <Route path="/student-dashboard" element={<StudentDashboard />} />
               <Route path="/parent-dashboard" element={<ParentDashboard />} />
-              <Route path="/about" element={<About />} />
               <Route path="/quiz" element={<Quiz />} />
               <Route path="/colleges" element={<Colleges />} />
               <Route path="/scholarships" element={<Scholarships />} />
