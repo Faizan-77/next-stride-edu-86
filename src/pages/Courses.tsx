@@ -22,29 +22,45 @@ import {
 const streams = [
   {
     id: 1,
-    name: 'Science',
+    name: 'Science(Maths)',
     icon: Calculator,
-    description: 'Mathematics, Physics, Chemistry, Biology - Foundation for engineering and medical careers',
-    totalCourses: 150,
+    description: 'Mathematics, Physics, Chemistry - Foundation for engineering and technology careers',
+    totalCourses: 120,
     avgSalary: '₹8-25 LPA',
     jobGrowth: '+15%',
     color: 'primary',
     courses: [
       { name: 'Computer Science Engineering', duration: '4 years', demand: 'Very High' },
-      { name: 'Medical (MBBS)', duration: '5.5 years', demand: 'High' },
-      { name: 'Biotechnology', duration: '4 years', demand: 'Moderate' },
+      { name: 'Mechanical Engineering', duration: '4 years', demand: 'High' },
+      { name: 'Electrical Engineering', duration: '4 years', demand: 'High' },
       { name: 'Aerospace Engineering', duration: '4 years', demand: 'High' }
     ]
   },
   {
     id: 2,
+    name: 'Science(Biology)',
+    icon: Stethoscope,
+    description: 'Biology, Chemistry, Physics - Foundation for medical and life science careers',
+    totalCourses: 80,
+    avgSalary: '₹6-30 LPA',
+    jobGrowth: '+12%',
+    color: 'success',
+    courses: [
+      { name: 'MBBS', duration: '5.5 years', demand: 'Very High' },
+      { name: 'BDS (Dental)', duration: '5 years', demand: 'High' },
+      { name: 'BAMS (Ayurveda)', duration: '5.5 years', demand: 'Moderate' },
+      { name: 'BUMS (Unani)', duration: '5.5 years', demand: 'Moderate' }
+    ]
+  },
+  {
+    id: 3,
     name: 'Commerce',
     icon: Briefcase,
     description: 'Business, Economics, Accounting - Gateway to finance and management careers',
     totalCourses: 120,
     avgSalary: '₹6-20 LPA',
     jobGrowth: '+12%',
-    color: 'success',
+    color: 'warning',
     courses: [
       { name: 'Chartered Accountancy', duration: '4-5 years', demand: 'Very High' },
       { name: 'MBA', duration: '2 years', demand: 'High' },
@@ -53,35 +69,19 @@ const streams = [
     ]
   },
   {
-    id: 3,
+    id: 4,
     name: 'Arts/Humanities',
     icon: Palette,
     description: 'Literature, History, Psychology, Sociology - Creative and social science fields',
     totalCourses: 200,
     avgSalary: '₹4-15 LPA',
     jobGrowth: '+8%',
-    color: 'warning',
+    color: 'accent',
     courses: [
       { name: 'Psychology', duration: '3 years', demand: 'High' },
       { name: 'Mass Communication', duration: '3 years', demand: 'Moderate' },
       { name: 'Political Science', duration: '3 years', demand: 'Moderate' },
       { name: 'Fine Arts', duration: '4 years', demand: 'Moderate' }
-    ]
-  },
-  {
-    id: 4,
-    name: 'Vocational',
-    icon: Wrench,
-    description: 'Skill-based practical training - Direct entry to job market with specialized skills',
-    totalCourses: 80,
-    avgSalary: '₹3-12 LPA',
-    jobGrowth: '+10%',
-    color: 'accent',
-    courses: [
-      { name: 'Digital Marketing', duration: '6 months', demand: 'Very High' },
-      { name: 'Web Development', duration: '1 year', demand: 'Very High' },
-      { name: 'Graphic Design', duration: '1 year', demand: 'High' },
-      { name: 'Hotel Management', duration: '3 years', demand: 'Moderate' }
     ]
   }
 ];
