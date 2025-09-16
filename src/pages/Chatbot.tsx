@@ -45,7 +45,7 @@ export default function Chatbot() {
   const [messages, setMessages] = useState<Message[]>([
     {
       id: 1,
-      text: "Hi! I'm EduNav's AI Assistant. I'm here to help you with career guidance, college information, and educational planning. How can I assist you today?",
+      text: "Hi! Welcome to FAQs. I'm here to help you with career guidance, college information, and educational planning. How can I assist you today?",
       sender: 'bot',
       timestamp: new Date()
     }
@@ -122,7 +122,7 @@ export default function Chatbot() {
               <CardHeader className="border-b">
                 <CardTitle className="flex items-center space-x-2">
                   <Bot className="h-6 w-6 text-primary" />
-                  <span>EduNav AI Assistant</span>
+                  <span>FAQs</span>
                   <div className="ml-auto flex items-center space-x-2">
                     <div className="w-2 h-2 bg-success rounded-full"></div>
                     <span className="text-sm text-muted-foreground">Online</span>
